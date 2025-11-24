@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    
+</head>
+
+<body>
+
+    <div class="header">
+        <h2 id="greeting"></h2>
+        <script>
+            (function () {
+                const student = 'Tome';
+                const greetingEl = document.getElementById('greeting');
+
+                function updateGreeting() {
+                    const hour = new Date().getHours();
+                    let msg = '';
+                    if (hour < 12) {
+                        msg = 'Dobre rano';
+                    } else if (hour < 18) {
+                        msg = 'Dobre odpoledne';
+                    } else if (hour < 23) {
+                        msg = 'Dobry vecer';
+                    } else {
+                        msg = 'Dobrou noc';
+                    }
+                    greetingEl.textContent = msg + ', ' + student + '!';
+                }
+                updateGreeting();
+            })();
+        </script>
+        <style>
+        .header {
+            font-size: x-large;
+            font-family: monospace;
+            font-weight: bold;
+            color: #9C27F5;
+        }
+    </style>
+    </div>
+
+</body>
+
+</html>
