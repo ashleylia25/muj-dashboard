@@ -4,5 +4,6 @@
 Tohle je dashboard pro vyuku HTML, CSS a JavaScriptu v hodinach WEBu.
 
 ## Funkce
-- zobrazeni pozdravu
-- zobrazeni casu (WIP)
+- Zobrazeni pozdravu
+- Zobrazeni casu
+- Od 26.11. zobrazuje i datum
