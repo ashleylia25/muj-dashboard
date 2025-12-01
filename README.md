@@ -7,3 +7,5 @@ Tohle je dashboard pro vyuku HTML, CSS a JavaScriptu v hodinach WEBu.
 - Zobrazeni pozdravu
 - Zobrazeni casu
 - Od 26.11. zobrazuje i datum
+- Zobrazeni pocasi
+- Kalkulacka na jednoduche vypocty

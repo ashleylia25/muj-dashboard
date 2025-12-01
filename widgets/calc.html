@@ -1,0 +1,66 @@
+<div class="simple-calc">
+    <input type="text" id="calc-input">
+    <div class="buttons">
+        <button onclick="calcAppend('1')">1</button>
+        <button onclick="calcAppend('2')">2</button>
+        <button onclick="calcAppend('3')">3</button>
+        <button onclick="calcAppend('4')">4</button>
+        <button onclick="calcAppend('5')">5</button>
+        <button onclick="calcAppend('6')">6</button>
+        <button onclick="calcAppend('7')">7</button>
+        <button onclick="calcAppend('8')">8</button>
+        <button onclick="calcAppend('9')">9</button>
+        <button onclick="calcAppend('0')">0</button>
+
+        <button onclick="calcAppend('/')" class="op">/</button>
+        <button onclick="calcAppend('*')" class="op">*</button>
+        <button onclick="calcAppend('-')" class="op">-</button>
+        <button onclick="calcAppend('+')" class="op">+</button>
+    
+        <button onclick="calcResult()" class="op">=</button>
+        <button onclick="calcClear()" class="clear">C</button>
+    </div>
+</div>
+<script>
+    window.calcAppend = function (val) {
+        document.getElementById('calc-input').value += val;
+    }
+    window.calcResult = function () {
+        try {
+            const input = document.getElementById('calc-input');
+            input.value = eval(input.value);
+        } catch (e) {
+            alert('Chyba');
+        }    
+    }
+    window.calcClear = function () {
+        document.getElementById('calc-input').value = '';
+    }
+</script>
+<style>
+    .simple-calc {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4px;
+        max-width: 200px;
+    }
+    #calc-input {
+        grid-column: span 4;
+        text-align: right;
+        padding: 4px;
+        font-weight: bolder;
+        font-size: larger;
+    }
+    .buttons {
+        display: contents;
+    }
+    .buttons .clear {
+        grid-column: span 4;
+    }
+    button {
+        padding: 8px;
+        cursor: pointer;
+        font-weight: bolder;
+        font-size: larger;
+    }
+</style>

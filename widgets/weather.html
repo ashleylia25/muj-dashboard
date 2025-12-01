@@ -1,0 +1,60 @@
+<div class="weather-widget">
+    <div class="weather-city">Načítám...</div> 
+    <div class="weather-temp" id="weather-temp">--°C</div>
+    <div class="weather-desc" id="weather-desc">Načítám...</div>
+</div>
+<script>
+    (function() {
+        const tempEl = document.getElementById('weather-temp');
+        const descEl = document.getElementById('weather-desc');
+        const cityEl = document.querySelector('.weather-city');
+
+        const lat = 49.0695;
+        const long = 17.4653;
+
+        const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&current_weather=true`;
+
+        fetch(weatherUrl)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.current_weather.temperature;
+                const code = data.current_weather.weathercode;
+
+                tempEl.textContent = `${temp}°C`;
+                descEl.textContent = getWeatherDescription(code);
+            });
+        const geoUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=cs`;
+        
+        fetch(geoUrl)
+            .then(response => response.json())
+            .then(data => {
+                cityEl.textContent = data.city || data.locality || 'Nezname misto';
+            });
+        
+        function getWeatherDescription(code) {
+            if (code === 0) return 'Jasno';
+            if (code >= 1 && code <= 3) return 'Polojasno';
+            if (code >= 45 && code <= 48) return 'Mlha';
+            if (code >= 51 && code <= 67) return 'Dest';
+            if (code >= 71 && code <= 77) return 'Snih';
+            if (code >= 95) return 'Bourka';
+            return 'Nezname';
+        }
+    }
+    )();
+</script>
+<style>
+    .weather-city {
+        text-align: center;
+        font-weight: bolder;
+        font-size: large;
+    }
+    .weather-temp {
+        text-align: center;
+        font-weight: bolder;
+        font-size: xx-large;
+    }
+    .weather-desc {
+        text-align: center;   
+    }
+</style>
