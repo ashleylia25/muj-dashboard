@@ -9,3 +9,4 @@ Tohle je dashboard pro vyuku HTML, CSS a JavaScriptu v hodinach WEBu.
 - Od 26.11. zobrazuje i datum
 - Zobrazeni pocasi
 - Kalkulacka na jednoduche vypocty
+- TODO list
