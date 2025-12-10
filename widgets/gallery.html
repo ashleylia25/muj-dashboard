@@ -1,0 +1,48 @@
+<div class="header">
+    <h1>Fotogalerie</h1>
+</div>
+<div class="obrazky">
+    <div class="obrazek"><img src="img/amsterdam.jpg" alt="amsterdam"></div>
+    <div class="obrazek"><img src="img/copenhagen.jpg" alt="copenhagen"></div>
+    <div class="obrazek"><img src="img/luzern.jpg" alt="luzern"></div>
+    <div class="obrazek"><img src="img/prague.jpg" alt="prague"></div>
+    <div class="obrazek"><img src="img/stockholm.jpg" alt="stockholm"></div>
+    <div class="obrazek"><img src="img/vienna.jpg" alt="vienna"></div>
+</div>
+<style>
+    .header {
+        font-size: x-large;
+        font-family: monospace;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    img {
+        width: 300px;
+        height: 200px;
+        border-radius: 15px;
+    }
+
+    .obrazky {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .obrazek {
+        padding-top: 20px;
+    }
+
+    @media (max-width: 460px) {
+        .obrazky {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+    }
+
+    @media (max-width: 400px) {
+        .img {
+            grid-column: 1 / -1;
+        }
+    }
+</style>
