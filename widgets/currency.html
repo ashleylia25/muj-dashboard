@@ -1,0 +1,53 @@
+<div class="currency-widget">
+  <div class="row"><img class="flags" src="/img/eu.jpg">1 EUR = <span data-rate="eur">...</span> CZK</div>
+  <div class="row"><img class="flags" src="/img/usa.jpg">1 USD = <span data-rate="usd">...</span> CZK</div>
+  <div class="row"><img class="flags" src="/img/uk.jpg">1 GBP = <span data-rate="gbp">...</span> CZK</div>
+  <div class="row"><img class="flags" src="/img/switzerland.jpg">1 CHF = <span data-rate="chf">...</span> CZK</div>
+
+  <script>
+    (async function () {
+  const widget = document.currentScript.parentNode;
+  const rateElements = widget.querySelectorAll('[data-rate]');
+
+  try {
+    const res = await fetch('https://v6.exchangerate-api.com/v6/ed392505a82f828590f59cb7/latest/CZK');
+    const data = await res.json();
+
+    rateElements.forEach(el => {
+      const rateName = el.dataset.rate.toUpperCase();
+      const czkPerCurrency = 1 / data.conversion_rates[rateName]; // převrácený kurz
+      el.textContent = czkPerCurrency.toFixed(2);
+    });
+
+  } catch (err) {
+    console.error('Chyba při načítání kurzů:', err);
+    rateElements.forEach(el => el.textContent = '---');
+  }
+})();
+  </script>
+</div>
+
+<style>
+  .currency-widget {
+    font-family: system-ui, sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    text-align: center;
+  }
+
+  .currency-widget .row {
+    padding: 1rem;
+    border-radius: 6px;
+    background: #f2f4f8;
+  }
+  
+  .flags {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 0.2rem;
+  margin-bottom: 1%;
+  }
+</style>

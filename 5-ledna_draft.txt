@@ -1,0 +1,9 @@
+5. ledna 2025 - WWW dashboard - Tomáš Psotka 2SŠ
+
+Můj nápad je takový, že bych si udělal dva widgety s tím, že jeden z nich bude ukazovat hodnotu koruny v porování s eurem, dolarem, librou, a frankem. První nápad byl, že bych tam měl dropdown, ve kterém si může uživatel vybrat, na jakou měnu chce převádět, ale jestli tam chci mít jenom ty měny, které mě zajímají, tak mi přijde lepší tam dát všechny 4 pod sebe.
+	(popřípadě zkusím přidat ještě vlajku a zkratku za měnu, na kterou se koruna převádí. Př: [švýcarská vlajka] 1 CHF = 26.05 CZK [česká vlajka])
+Druhý widget by byl trošku podobný tomu prvnímu a zárověn trošku podobný widgetu, který už jsme dřív dělali v hodině. Byl by to ukazatel času, ale místo toho, aby to byl jen náš čas, tak přidám časy i z měst v jiných časových pásmech. Vzhledově bych to chtěl mít stejně, jako ten první widget - pod sebou. Možná si to ještě rozmyslím a udělám to trošku jinak, až se dozvím jak to vypadá v praxi.
+	(nemám ještě na 100% rozmyšlené, které města chci přidat, ale určitě tam bude NYC, LA, Tokyo. Zbytek ještě uvidíme.)
+
+Update 1: Ještě mě napadlo, že ke každé měně mohl dát graf aby bylo vidět, jak se její hodnota vyvíjí, ale to mi přijde trošku moc složité a ani nevím jak bych to udělal (a kdyby mi to vygenerovalo AI, tak nebudu chápat proč co a jak a nic se z toho nenaučím :/ ), takže to asi dělat nebudu, ale myslím, že to je celkem zajímavý nápad.
+

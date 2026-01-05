@@ -1,0 +1,49 @@
+==========================================================================================================================================================
+
+Zásadní rozdíly:
+	1. AI my vygenerovalo pevně nastavené kurzy, které nejsou ani správně a i kdyby byly, tak pravděpodobně do konce týdne budou špatně.
+		Moje řešení: Vytvořil jsem si API klíč a připojil jsem ho k widgetu, aby mohl kurz být vždy aktuální.
+	2. Vzhled - AI to vzhledově nenavrhlo úplně podle mých představ. Velká část toho stylu je podle mě v pořádku, takže jsem ji nechal v původním stavu, ale font, padding, gap a barvy pozadí byly trošku nepěkné.
+		Moje řešení: Upravil jsem stylizaci podle sebe tak, aby se na to lépe dívalo a aby to bylo přehledné.
+    3. Vlajky - Tohle taky souvisí s CSS, protože AI mi sice kód vygenerovalo s vlajkama, které jsem tam chtěl, ale jenom jako emoji a já jsem si to představoval jinak.
+        Moje řešení: Emoji jsem odstranil a místo nich jsem přidal obrázky.
+===========================================================================================================================================================
+
+
+<div class="currency-widget">
+  <div class="row">🇪🇺 1 EUR = <span data-rate="eur"></span> CZK 🇨🇿</div>
+  <div class="row">🇺🇸 1 USD = <span data-rate="usd"></span> CZK 🇨🇿</div>
+  <div class="row">🇬🇧 1 GBP = <span data-rate="gbp"></span> CZK 🇨🇿</div>
+  <div class="row">🇨🇭 1 CHF = <span data-rate="chf"></span> CZK 🇨🇿</div>
+
+  <script>
+    (function () {
+      const rates = {
+        eur: 25.10,
+        usd: 23.00,
+        gbp: 29.30,
+        chf: 26.05
+      };
+
+      document.querySelectorAll('.currency-widget [data-rate]')
+        .forEach(el => el.textContent = rates[el.dataset.rate].toFixed(2));
+    })();
+  </script>
+</div>
+
+<style>
+  .currency-widget {
+    font-family: system-ui, sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+  }
+
+  .currency-widget .row {
+    padding: 0.3rem;
+    border-radius: 6px;
+    background: #f2f4f8;
+  }
+</style>
