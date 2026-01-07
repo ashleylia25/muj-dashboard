@@ -5,8 +5,9 @@ Zásadní rozdíly:
 		Moje řešení: Vytvořil jsem si API klíč a připojil jsem ho k widgetu, aby mohl kurz být vždy aktuální.
 	2. Vzhled - AI to vzhledově nenavrhlo úplně podle mých představ. Velká část toho stylu je podle mě v pořádku, takže jsem ji nechal v původním stavu, ale font, padding, gap a barvy pozadí byly trošku nepěkné.
 		Moje řešení: Upravil jsem stylizaci podle sebe tak, aby se na to lépe dívalo a aby to bylo přehledné.
-    3. Vlajky - Tohle taky souvisí s CSS, protože AI mi sice kód vygenerovalo s vlajkama, které jsem tam chtěl, ale jenom jako emoji a já jsem si to představoval jinak.
-        Moje řešení: Emoji jsem odstranil a místo nich jsem přidal obrázky.
+	3. Vlajky - Tohle taky souvisí s CSS, protože AI mi sice kód vygenerovalo s vlajkama, které jsem tam chtěl, ale jenom jako emoji a já jsem si to představoval jinak.
+        	Moje řešení: Emoji jsem odstranil a místo nich jsem přidal obrázky.
+
 ===========================================================================================================================================================
 
 

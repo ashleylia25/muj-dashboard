@@ -6,4 +6,3 @@ Druhý widget by byl trošku podobný tomu prvnímu a zárověn trošku podobný
 	(nemám ještě na 100% rozmyšlené, které města chci přidat, ale určitě tam bude NYC, LA, Tokyo. Zbytek ještě uvidíme.)
 
 Update 1: Ještě mě napadlo, že ke každé měně mohl dát graf aby bylo vidět, jak se její hodnota vyvíjí, ale to mi přijde trošku moc složité a ani nevím jak bych to udělal (a kdyby mi to vygenerovalo AI, tak nebudu chápat proč co a jak a nic se z toho nenaučím :/ ), takže to asi dělat nebudu, ale myslím, že to je celkem zajímavý nápad.
-
