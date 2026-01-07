@@ -1,0 +1,101 @@
+<div class="worldtime">
+    <div class="city">
+        <img src="img/uk.jpg" class="flagimg">
+        <div class="text">
+            <span class="name">Londýn</span>
+            <span class="time" id="london"></span>
+        </div>
+    </div>
+
+    <div class="city">
+        <img src="img/usa.jpg" class="flagimg">
+        <div class="text">
+            <span class="name">New York</span>
+            <span class="time" id="newyork"></span>
+        </div>
+    </div>
+
+    <div class="city">
+        <img src="img/canada.png" class="flagimg">
+        <div class="text">
+            <span class="name">Vancouver</span>
+            <span class="time" id="vancouver"></span>
+        </div>
+    </div>
+
+    <div class="city">
+        <img src="img/japan.png" class="flagimg">
+        <div class="text">
+            <span class="name">Tokio</span>
+            <span class="time" id="tokyo"></span>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    function updateWorldTime() {
+        const now = new Date();
+
+        document.getElementById('london').textContent =
+            now.toLocaleTimeString('cs-CZ', { timeZone: 'Europe/London' });
+
+        document.getElementById('newyork').textContent =
+            now.toLocaleTimeString('cs-CZ', { timeZone: 'America/New_York' });
+
+        document.getElementById('vancouver').textContent =
+            now.toLocaleTimeString('cs-CZ', { timeZone: 'America/Vancouver' });
+
+        document.getElementById('tokyo').textContent =
+            now.toLocaleTimeString('cs-CZ', { timeZone: 'Asia/Tokyo' });
+    }
+
+    updateWorldTime();
+    setInterval(updateWorldTime, 1000);
+})();
+</script>
+
+<style>
+.worldtime {
+    display: flex;
+    gap: 64px;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.city {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 2px solid darkslateblue;
+    border-radius: 10px;
+    padding: 10px 14px;
+    background: #f9f9ff;
+    color: darkslateblue;
+}
+
+.city img {
+    width: 40px;
+    height: auto;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.time {
+    font-size: 26px;
+    font-weight: bolder;
+}
+
+.flagimg {
+    border: 2px solid;
+}
+</style>

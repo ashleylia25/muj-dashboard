@@ -1,0 +1,50 @@
+==========================================================================================================================
+
+Zásadní rozdíly:
+    1. AI mi tentokrát nevygenerovalo ani CSS, jen HTML a JS.
+        Moje řešení: CSS jsem překopíroval z dřívějšího widgetu.
+    2. Vygenerovaný kód zobrazoval časy přesně tak, jak jsem to nechtěl.
+        Ukázka vygenerovaného kódu:
+            Londýn: 12:00:00
+            New York: 12:00:00
+            ...
+        Ukázka kódu podle mých představ:
+            Londýn      New York    ...
+            12:00:00    12:00:00    ...
+        Moje řešení: Rozdělil jsem každé město a čas na svůj vlastní blok, které jsou všechny 4 vedle sebe ve widgetu a každý blok jsem nastyloval.
+    3. Vygenerovaný widget vypadal tak, jak suchý chleba chutná.
+        Moje řešení: Stejně jako u minulého widgetu jsem tam přidal vlajky tak, aby v každém bloku byla vlajka, která patří státu, ve kterém se určité město nachází.
+
+    Update: U japonské vlajky byl moc malý kontrast mezi bílou a bílou (vlajka, pozadí), takže jsem všechny vlajky ohraničil tenkou kontrastní čárou.
+
+==========================================================================================================================
+
+<div class="worldtime">
+    <div><strong>Londýn:</strong> <span id="london"></span></div>
+    <div><strong>New York:</strong> <span id="newyork"></span></div>
+    <div><strong>Vancouver:</strong> <span id="vancouver"></span></div>
+    <div><strong>Tokio:</strong> <span id="tokyo"></span></div>
+</div>
+
+<script>
+(function () {
+    function updateWorldTime() {
+        const now = new Date();
+
+        document.getElementById('london').textContent =
+            now.toLocaleTimeString('cs-CZ', { timeZone: 'Europe/London' });
+
+        document.getElementById('newyork').textContent =
+            now.toLocaleTimeString('cs-CZ', { timeZone: 'America/New_York' });
+
+        document.getElementById('vancouver').textContent =
+            now.toLocaleTimeString('cs-CZ', { timeZone: 'America/Vancouver' });
+
+        document.getElementById('tokyo').textContent =
+            now.toLocaleTimeString('cs-CZ', { timeZone: 'Asia/Tokyo' });
+    }
+
+    updateWorldTime();
+    setInterval(updateWorldTime, 1000);
+})();
+</script>

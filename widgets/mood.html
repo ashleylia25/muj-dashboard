@@ -1,0 +1,80 @@
+<div class="mood-tracker-slider">
+    <h3>Jak se dnes cítíš?</h3>
+    <div class="slider-container">
+        <span class="mood-emoji">😡</span>
+        <input type="range" min="0" max="4" value="2" id="moodSlider" step="1">
+        <span class="mood-emoji">😄</span>
+    </div>
+    <div class="selected-mood">Vybraná nálada: <span id="currentMood">😐</span></div>
+</div>
+
+<script>
+const slider = document.getElementById('moodSlider');
+const currentMood = document.getElementById('currentMood');
+const emojis = ["😡", "😕", "😐", "🙂", "😄"];
+slider.addEventListener('input', () => {
+    const value = parseInt(slider.value);
+    currentMood.textContent = emojis[value];
+});
+</script>
+
+<style>
+.mood-tracker-slider {
+    border: 2px solid #4a4a8a;
+    border-radius: 12px;
+    padding: 16px;
+    width: 280px;
+    font-family: Arial, sans-serif;
+    background: #f0f0ff;
+    color: #333;
+    text-align: center;
+}
+
+.mood-tracker-slider h3 {
+    margin-bottom: 12px;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.mood-emoji {
+    font-size: 24px;
+}
+
+input[type=range] {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 8px;
+    border-radius: 4px;
+    background: #cfcfff;
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #4a4a8a;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+    background: #2e2e6a;
+    transform: scale(1.1);
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #4a4a8a;
+    cursor: pointer;
+}
+</style>

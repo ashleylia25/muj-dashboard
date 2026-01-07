@@ -1,0 +1,7 @@
+5. ledna 2025 - WWW dashboard - Tomáš Psotka 2SŠ
+
+Na dnešní widget mám takový nápad, že na mood trackeru místo tlačítek bude slider, na kterém uživatel určí svou náladu.
+Při tomto widgetu jsem se spoléhal na AI nejvíc ze všech widgetů zatím.
+AI mi vygenerovala celý JS (zůstal netknutý), HTML a CSS jsem si poupravil podle sebe.
+
+Kód je v souboru AI-zadani3.txt
