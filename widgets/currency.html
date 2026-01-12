@@ -15,7 +15,7 @@
 
     rateElements.forEach(el => {
       const rateName = el.dataset.rate.toUpperCase();
-      const czkPerCurrency = 1 / data.conversion_rates[rateName]; // převrácený kurz
+      const czkPerCurrency = 1 / data.conversion_rates[rateName];
       el.textContent = czkPerCurrency.toFixed(2);
     });
 
