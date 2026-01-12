@@ -1,3 +1,10 @@
+===============================================================================================
+
+Chtěl jsem ještě přidat funkci, která by zajistila, že nálada jde uložit jen jednou za den, ale nedokázal jsem přijít, jak na to.
+Šlo by to udělat přes AI, ale přijde mi, že už jsem si toho vygeneroval dost a že už by to nebylo dost autentické na to, abych z toho pořád měl dobrý pocit.
+
+===============================================================================================
+
 <div class="mood-tracker-slider">
     <div class="slider-container">
         <span class="mood-emoji">😡</span>
