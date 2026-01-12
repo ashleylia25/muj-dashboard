@@ -11,3 +11,5 @@ Tohle je dashboard pro vyuku HTML, CSS a JavaScriptu v hodinach WEBu.
 - Kalkulacka na jednoduche vypocty
 - TODO list
 - Fotogalerie (Zatim neni responzivni)
+- Prevadec meny (EUR, GBP, USD, CHF)
+- Cas v ruznych casoych pasmech
