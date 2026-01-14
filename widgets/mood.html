@@ -12,51 +12,46 @@
     </div>
 
     <button id="saveBtn">Uložit náladu</button>
-</div>
 
+    <div id="historyToggle" style="display:none; cursor:pointer; margin-top:10px; font-size:14px;">
+        Zobrazit historii
+    </div>
+    <div id="moodHistory" style="display:none; margin-top:8px; font-size:14px;"></div>
+
+</div>
 <script>
-    const s = moodSlider,
-        m = currentMood,
-        b = saveBtn,
+    const s = moodSlider, m = currentMood, b = saveBtn,
         E = ["😡", "😕", "😐", "🙂", "😄"],
         K = "moodHistory",
         d = new Date().toISOString().slice(0, 10),
-        h = JSON.parse(localStorage.getItem(K)) || {};
+        h = JSON.parse(localStorage.getItem(K)) || {},
+        t = historyToggle,
+        x = moodHistory;
 
     s.oninput = () => m.textContent = E[s.value];
 
-    const lock = v => (
-        s.value = v,
-        m.textContent = E[v],
-        s.disabled = b.disabled = true,
-        b.textContent = "Dnešní nálada uložena"
-    );
+    const lock = v => (s.value = v, m.textContent = E[v], s.disabled = b.disabled = true, b.textContent = "Dnešní nálada uložena");
 
-    if (h[d] != null) lock(h[d]);
+    const render = () => {
+        const e = Object.entries(h).sort((a, b) => b[0].localeCompare(a[0]));
+        if (!e.length) return;
+        t.style.display = "block";
+        x.innerHTML = e.map(([d, v]) => `${d}: ${E[v]}`).join("<br>");
+    };
+
+    t.onclick = () => {
+        const o = x.style.display === "block";
+        x.style.display = o ? "none" : "block";
+        t.textContent = o ? "Zobrazit historii ▼" : "Skrýt historii ▲";
+    };
+
+    if (h[d] != null) { lock(h[d]); render(); }
     else b.onclick = () => (
         h[d] = +s.value,
         localStorage.setItem(K, JSON.stringify(h)),
         lock(h[d]),
         render()
     );
-
-    function render() {
-        let x = moodHistory;
-        if (!x && !Object.keys(h).length) return;
-        if (!x) {
-            x = document.createElement("div");
-            x.id = "moodHistory";
-            x.style.marginTop = "12px";
-            document.querySelector(".mood-widget").appendChild(x);
-        }
-        x.innerHTML = "<strong>Historie:</strong><br>" +
-            Object.entries(h)
-                .sort((a, b) => b[0].localeCompare(a[0]))
-                .map(([d, v]) => `${d}: ${E[v]}`)
-                .join("<br>");
-    }
-
-    render();
 </script>
 <style>
     :root {
