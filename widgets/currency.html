@@ -6,24 +6,24 @@
 
   <script>
     (async function () {
-  const widget = document.currentScript.parentNode;
-  const rateElements = widget.querySelectorAll('[data-rate]');
+      const widget = document.currentScript.parentNode;
+      const rateElements = widget.querySelectorAll('[data-rate]');
 
-  try {
-    const res = await fetch('https://v6.exchangerate-api.com/v6/ed392505a82f828590f59cb7/latest/CZK');
-    const data = await res.json();
+      try {
+        const res = await fetch('https://v6.exchangerate-api.com/v6/ed392505a82f828590f59cb7/latest/CZK');
+        const data = await res.json();
 
-    rateElements.forEach(el => {
-      const rateName = el.dataset.rate.toUpperCase();
-      const czkPerCurrency = 1 / data.conversion_rates[rateName];
-      el.textContent = czkPerCurrency.toFixed(2);
-    });
+        rateElements.forEach(el => {
+          const rateName = el.dataset.rate.toUpperCase();
+          const czkPerCurrency = 1 / data.conversion_rates[rateName];
+          el.textContent = czkPerCurrency.toFixed(2);
+        });
 
-  } catch (err) {
-    console.error('Chyba při načítání kurzů:', err);
-    rateElements.forEach(el => el.textContent = '---');
-  }
-})();
+      } catch (err) {
+        console.error('Chyba při načítání kurzů:', err);
+        rateElements.forEach(el => el.textContent = '---');
+      }
+    })();
   </script>
 </div>
 
@@ -40,22 +40,22 @@
   .currency-widget .row {
     padding: 1rem;
     border-radius: 16px;
-    background: #f2f4f8;
+    background: var(--widget-in-widget);
     border: 2px solid darkgray;
   }
-  
+
   .currency-widget .row:hover {
     padding: 1rem;
     border-radius: 16px;
-    background: #f9f9f9;
+    background: var(--wiw-hover);
     border: 2px solid darkgray;
   }
 
   .flags {
-  height: 20px;
-  width: auto;
-  vertical-align: middle;
-  margin-right: 0.2rem;
-  margin-bottom: 1%;  
+    height: 20px;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 0.2rem;
+    margin-bottom: 1%;
   }
 </style>
