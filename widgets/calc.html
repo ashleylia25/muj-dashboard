@@ -4,21 +4,19 @@
         <button onclick="calcAppend('1')">1</button>
         <button onclick="calcAppend('2')">2</button>
         <button onclick="calcAppend('3')">3</button>
+        <button onclick="calcAppend('/')" class="op">/</button>
         <button onclick="calcAppend('4')">4</button>
         <button onclick="calcAppend('5')">5</button>
         <button onclick="calcAppend('6')">6</button>
+        <button onclick="calcAppend('*')" class="op">*</button>
         <button onclick="calcAppend('7')">7</button>
         <button onclick="calcAppend('8')">8</button>
         <button onclick="calcAppend('9')">9</button>
-        <button onclick="calcAppend('0')">0</button>
-
-        <button onclick="calcAppend('/')" class="op">/</button>
-        <button onclick="calcAppend('*')" class="op">*</button>
         <button onclick="calcAppend('-')" class="op">-</button>
+        <button onclick="calcAppend('0')">0</button>
         <button onclick="calcAppend('+')" class="op">+</button>
-    
-        <button onclick="calcResult()" class="op">=</button>
-        <button onclick="calcClear()" class="clear">C</button>
+        <button onclick="calcClear()" class="result">C</button>
+        <button onclick="calcResult()" class="clear">=</button>    
     </div>
 </div>
 <script>
@@ -50,6 +48,8 @@
         padding: 4px;
         font-weight: bolder;
         font-size: larger;
+        color: var(--text-color);
+        background-color: var(--input);
     }
     .buttons {
         display: contents;

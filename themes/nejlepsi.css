@@ -1,9 +1,9 @@
 :root {
-    --body-bg: #f5f5f5;
-    --widget-bg: #ffffff;
+    --body-bg: pink;
+    --widget-bg: #aadfff;
     --widget-in-widget: #f2f4f8;
     --wiw-hover: #f9f9f9;
-    --text-color: #333333;
+    --text-color: black;
     --shadow-color: rgba(0,0,0,0.1);
     --shadow-hover: rgba(0,0,0,0.15);
     --primary-color: #3b82f6;
@@ -11,5 +11,5 @@
     --widget-text: darkslateblue;
     --outline-primary: #4a4a8a;
     --outline-primary-dark: #2e2e6a;
-    --input: #f5f5f5;
+    --input: #88ccfd;
 }

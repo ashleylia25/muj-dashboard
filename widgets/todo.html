@@ -1,7 +1,7 @@
 <div class="todo-widget" x-data="todoWidget()">
     <h3>Úkoly</h3>
     <div class="input-group">
-        <input type="text" x-model="newTodo" @keyup.enter="add()" placeholder="Novy ukol...">
+        <input class="input" type="text" x-model="newTodo" @keyup.enter="add()" placeholder="Novy ukol...">
         <button @click="add()">+</button>
     </div>
     <ul>
@@ -79,6 +79,10 @@
             display:flex;
             justify-content: space-between;
             box-shadow: 1px 1px 10px rgba(0, 0, 0, alpha);
+        }
+        .input {
+            color: var(--text-color);
+            background-color: var(--input);
         }
 
     </style>
