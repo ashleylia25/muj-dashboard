@@ -14,3 +14,4 @@ Tohle je dashboard pro vyuku HTML, CSS a JavaScriptu v hodinach WEBu.
 - Prevadec meny (EUR, GBP, USD, CHF)
 - Cas v ruznych casoych pasmech
 - Mood tracker
+- Theme switcher
